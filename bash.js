@@ -1,20 +1,16 @@
+const exportsFromPwd = require("./pwd");
+const ls = require("./ls");
+const fs = require('fs');
 
 
-const exportsFromPwd = require('./pwd')
-const ls = require('./ls');
+process.stdout.write("prompt> ");
 
-// console.log(exportsFromPwd);
-
-process.stdout.write('prompt> ');
-
-process.stdin.on('data', (data) => {
-
+process.stdin.on("data", (data) => {
   const cmd = data.toString().trim();
 
-  if (cmd === 'pwd'){
+  if (cmd === "pwd") {
     exportsFromPwd();
-  }
-  else if( cmd === 'ls'){
-
+  } else if (cmd === "ls") {
+    fs.readdir('./', 'utf8', ls);
   }
 });

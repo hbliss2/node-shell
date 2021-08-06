@@ -1,4 +1,4 @@
-process.stdout.write('prompt> ');
+// process.stdout.write('prompt> ');
 
 // process.stdin.on('data', (data) => {
 //   const cmd = data.toString().trim();
@@ -7,16 +7,14 @@ process.stdout.write('prompt> ');
 //   process.stdout.write('\nprompt> ');
 // });
 
-const pwd = (data) => {
-
-  const cmd = data.toString().trim();
+const pwd = () => {
 
   process.stdout.write(process.cwd());
   process.stdout.write('\nprompt> ');
 
 };
 
-module.exports(pwd)
+module.exports = pwd;
 
 
 
